@@ -1,0 +1,58 @@
+<div *ngIf="false">
+	<h1>
+		{{title}}
+	</h1>
+	<h2>
+		{{subTitle}}
+	</h2>
+	
+	<input type="checkbox" [(ngModel)]="showFruits">
+	
+	<br>
+	
+	showFruits: <br>
+	{{showFruits}}
+	<br>
+	
+	Fruits :
+	
+	<ul *ngIf="showFruits">
+		<li *ngFor="let f of fruits">
+			{{f}}
+		</li>
+	</ul>
+	
+	<input placeholder="enter a fruit" [(ngModel)]="newFruit" #addInput>
+	<h2>
+		name length : {{addInput.value.length}}
+	</h2>
+	
+	<input type="button" value="Add Fruit" (click)="onClick();addInput.value='' ">
+	
+	
+	<h2>
+		Enter Name:
+	</h2>
+	<input [(ngModel)]="name">
+	
+	<h2>
+		Hello, my name is {{name}}
+	</h2>
+	
+	Favorite Color:
+	<input [value]="color" (keyup)="onKeyUp()">
+	
+	<h2>
+		color: {{color}}
+	
+	</h2>
+	
+	{{msg}}
+</div>
+
+Select length :
+<input type="number"  value="0" [(ngModel)]="maxL">
+	
+<br>
+<input [maxLength]="maxL">
+  
